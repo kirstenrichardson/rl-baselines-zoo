@@ -341,3 +341,18 @@ MiniGrid-FourRooms-v0:
   ent_coef: 0.0
   learning_rate: 2.5e-4
   cliprange: 0.2
+
+# didn't come with file, have added myself
+CarRacing-v0:
+  normalize: true
+  n_envs: 8
+  n_timesteps: !!float 5e6
+  policy: 'MlpPolicy'
+  n_steps: 2000
+  nminibatches: 128
+  lam: 0.95
+  gamma: 0.99
+  noptepochs: 8
+  ent_coef: 0.001
+  learning_rate: 0.001
+  cliprange: 0.1
