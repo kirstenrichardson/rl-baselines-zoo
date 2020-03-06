@@ -80,7 +80,7 @@ if __name__ == '__main__':
     registered_envs = set(gym.envs.registry.env_specs.keys())
 
     # If the environment is not found, suggest the closest match
-    if env_id not in registered_envs:
+    if env_id not in registered_envs and ':' not in env_id: ### KR added and ':' not in env_id so that custom envs don't throw error
         try:
             closest_match = difflib.get_close_matches(env_id, registered_envs, n=1)[0]
         except IndexError:
