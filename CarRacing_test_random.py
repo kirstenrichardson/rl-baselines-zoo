@@ -1,5 +1,5 @@
 import gym
-env = gym.make('CarRacing-v0')
+env = gym.make('gym_CarRacing:CarRacing-v1') #env = gym.make('CarRacing-v0')
 observation = env.reset()
 for t in range(1000):
         env.render()
