@@ -375,6 +375,11 @@ def find_saved_model(algo, log_path, env_id):
     :param env_id: (str)
     :return: (str) Path to the saved model
     """
+
+    if ':' in env_id:                                                                   ######## KIRSTEN ADDED THIS IF STATEMENT TO DEAL WITH CUSTOM ENVS
+        mod_name, _sep, id = env_id.partition(':')
+        env_id = id
+
     model_path, found = None, False
     for ext in ['pkl', 'zip']:
         model_path = "{}/{}.{}".format(log_path, env_id, ext)
