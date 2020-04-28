@@ -160,6 +160,7 @@ def main():
 
     if args.verbose > 0 and len(episode_rewards) > 0:
         print("Mean reward: {:.2f}".format(np.mean(episode_rewards)))
+        print("Number episodes: {:.2f}".format(len(episode_rewards)))                                   #################### ADDED IN FOR EVAL PURPOSED
 
     # Workaround for https://github.com/openai/gym/issues/893
     if not args.no_render:

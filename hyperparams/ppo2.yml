@@ -356,3 +356,18 @@ CarRacing-v0:
   ent_coef: 0.001
   learning_rate: 0.001
   cliprange: 0.1
+
+# didn't come with file, have added myself
+gym_CarRacing:CarRacing-v1:
+  normalize: true
+  n_envs: 6
+  n_timesteps: !!float 10e6
+  policy: 'MlpPolicy'
+  n_steps: 2000
+  nminibatches: 128
+  lam: 0.95
+  gamma: 0.99
+  noptepochs: 8
+  ent_coef: 0.001
+  learning_rate: 0.001
+  cliprange: 0.1
