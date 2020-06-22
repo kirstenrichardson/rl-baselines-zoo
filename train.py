@@ -186,7 +186,7 @@ if __name__ == '__main__':
     # Convert to python object if needed
     if 'policy_kwargs' in hyperparams.keys() and isinstance(hyperparams['policy_kwargs'], str):
         hyperparams['policy_kwargs'] = eval(hyperparams['policy_kwargs'])
-        
+
     # Delete keys so the dict can be pass to the model constructor
     if 'n_envs' in hyperparams.keys():
         del hyperparams['n_envs']
@@ -321,7 +321,6 @@ if __name__ == '__main__':
             """
             return ALGOS[args.algo](env=create_env(n_envs), tensorboard_log=tensorboard_log,
                                     verbose=0, **kwargs)
-
 
         data_frame = hyperparam_optimization(args.algo, create_model, create_env, n_trials=args.n_trials,
                                              n_timesteps=n_timesteps, hyperparams=hyperparams,

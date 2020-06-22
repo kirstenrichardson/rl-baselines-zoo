@@ -344,30 +344,16 @@ MiniGrid-FourRooms-v0:
 
 # didn't come with file, have added myself
 CarRacing-v0:
-  normalize: true
-  n_envs: 8
-  n_timesteps: !!float 5e6
-  policy: 'MlpPolicy'
-  n_steps: 2000
-  nminibatches: 128
-  lam: 0.95
-  gamma: 0.99
-  noptepochs: 8
-  ent_coef: 0.001
-  learning_rate: 0.001
+  policy: 'CnnPolicy'
+  n_timesteps: 5000
+  nminibatches: 1
+  n_steps: 16
+  gamma: 0.9
+  learning_rate: 0.00001
+  ent_coef: 0.00000001
   cliprange: 0.1
+  noptepochs: 1
+  lam: 0.8
 
-# didn't come with file, have added myself
-gym_CarRacing:CarRacing-v1:
-  normalize: true
-  n_envs: 6
-  n_timesteps: !!float 10e6
-  policy: 'MlpPolicy'
-  n_steps: 2000
-  nminibatches: 128
-  lam: 0.95
-  gamma: 0.99
-  noptepochs: 8
-  ent_coef: 0.001
-  learning_rate: 0.001
-  cliprange: 0.1
+
+
