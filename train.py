@@ -1,5 +1,6 @@
 import os
 import time
+import datetime                                                     ################ I ADDED
 import difflib
 import argparse
 import importlib
@@ -374,3 +375,5 @@ if __name__ == '__main__':
             env.save(os.path.join(params_path, 'vecnormalize.pkl'))
             # Deprecated saving:
             # env.save_running_average(params_path)
+
+    print("Finished training at {}".format(datetime.datetime.now()))                        ############################# I ADDED 
