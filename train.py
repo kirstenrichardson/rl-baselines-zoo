@@ -36,6 +36,7 @@ from stable_baselines.common.cmd_util import make_atari_env
 from stable_baselines.common.vec_env import VecFrameStack, SubprocVecEnv, VecNormalize, DummyVecEnv
 from stable_baselines.common.noise import AdaptiveParamNoiseSpec, NormalActionNoise, OrnsteinUhlenbeckActionNoise
 from stable_baselines.ppo2.ppo2 import constfn
+from stable_baselines.common.callbacks import CheckpointCallback                                                            ########## I ADDED
 
 from utils import make_env, ALGOS, linear_schedule, get_latest_run_id, get_wrapper_class, find_saved_model
 from utils.hyperparams_opt import hyperparam_optimization
@@ -107,6 +108,8 @@ if __name__ == '__main__':
             args.tensorboard_log = ''
 
     tensorboard_log = None if args.tensorboard_log == '' else os.path.join(args.tensorboard_log, env_id)
+
+    checkpoint_callback = CheckpointCallback(save_freq=1000000, save_path='./logs/', name_prefix='checkpoint_model')               ########### I ADDED 
 
     is_atari = False
     if 'NoFrameskip' in env_id:
@@ -355,7 +358,7 @@ if __name__ == '__main__':
     print("Log path: {}".format(save_path))
 
     try:
-        model.learn(n_timesteps, **kwargs)
+        model.learn(n_timesteps, callback=checkpoint_callback, **kwargs)                                   ############### ADDED CHECKPOINT PARAM
     except KeyboardInterrupt:
         pass
 
