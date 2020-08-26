@@ -35,7 +35,7 @@ from stable_baselines.common import set_global_seeds
 from stable_baselines.common.cmd_util import make_atari_env
 from stable_baselines.common.vec_env import VecFrameStack, SubprocVecEnv, VecNormalize, DummyVecEnv
 from stable_baselines.common.noise import AdaptiveParamNoiseSpec, NormalActionNoise, OrnsteinUhlenbeckActionNoise
-from stable_baselines.ppo2.ppo2 import constfn
+from stable_baselines.common.schedules import constfn
 from stable_baselines.common.callbacks import CheckpointCallback                                                            ########## I ADDED
 
 from utils import make_env, ALGOS, linear_schedule, get_latest_run_id, get_wrapper_class, find_saved_model
